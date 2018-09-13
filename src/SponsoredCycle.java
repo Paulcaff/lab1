@@ -10,27 +10,27 @@ public class SponsoredCycle {
     }
 
 
-    public static void details() {
+    private static void details() {
         String firstname, initial, surname;
-        double kilometres = 0;
+        float kilometres ;
 
         firstname = JOptionPane.showInputDialog(null, "Please enter your firstname here: ");
         initial = JOptionPane.showInputDialog(null, "Please enter your initial here: ");
         surname = JOptionPane.showInputDialog(null, "Please enter your surname here: ");
-        kilometres= Double.parseDouble(JOptionPane.showInputDialog(null,"How many kilometres did you cycle: "));
+        kilometres= Float.parseFloat(JOptionPane.showInputDialog(null,"How many kilometres did you cycle: "));
 
-        JOptionPane.showMessageDialog(null,"First Name:"+firstname+"\nInitial: "+initial+"\nSurname:"+surname+"\nThe amount raised is: "+String.format("%.2f",priceCalculation(kilometres)));
+        JOptionPane.showMessageDialog(null,"First Name:"+firstname+"\nInitial: "+initial+"\nSurname:"+surname+"\nThe amount raised is: "+priceCalculation(kilometres));
 
     }
-    public static double priceCalculation(double kilometres){
+    private static float priceCalculation(float kilometres){
 
-        double donation = 0;
+        float donation ;
 
         if(kilometres <= 10 && kilometres>0) {
-            donation = kilometres * 0.07;
+            donation = kilometres * 0.07f;
         }
             else  {
-            donation = ((kilometres - 10) * 0.1) + 0.7;
+            donation = ((kilometres - 10) * 0.1f) + 0.7f;
         }
 
 
